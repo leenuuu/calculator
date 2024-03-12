@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>css</title>
+    <style>
+body{
+    background-color: #ccccff;
+    margin: 0;
+    padding: 0;
+}
+.app-title{
+    color:#4d004d;
+    text-align: center;
+    font-size: 60px;
+}
+.calculator-continer{
+    background-color: black;
+    width: 300px;
+    height: 400px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10px;
+padding: 30px;
+padding-top: 20px;
+}
+.input-screen{
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
+    font-size: 20px;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    background-color:#ccffcc;
+    border: 2px;
+}
+.brand-name{
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+.btn{
+font-size: 40px;
+height: 50px;
+width: 50px;
+margin: 5px;
+background-color: black;
+text-align: center;
+color: white;
+}
+.button-container{
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 25px;
+   background-color: black;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   box-shadow: white;
+}
+.btn1{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    background-color:#66b3ff;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0 0;
+    margin-top: 10px;
+    box-shadow: white;
+}
+    </style>
+    </head>
+    <body>
+<h1 class="app-title">Calculator</h1>
+<div class="calculator-continer"> 
+    <p class="brand-name">CITLLZEN</p>
+    <input type="text" id="input" class="input-screen">
+    <div class="button-container">
+        <button class="btn1"onclick="clr()">CORRECT</button>
+        <button class="btn"onclick="presskey('/')">/</button>
+        <button class="btn">*</button>
+        <button class="btn" onclick="presskey(7)">7</button>
+        <button class="btn"onclick="presskey(8)">8</button>
+        <button class="btn"onclick="presskey(9)">9</button>
+        <button class="btn"onclick="presskey('-')">-</button>
+        <button class="btn"onclick="presskey(4)">4</button>
+        <button class="btn"onclick="presskey(5)">5</button>
+        <button class="btn"onclick="presskey(6)">6</button>
+        <button class="btn"onclick="presskey('+')">+</button>
+        <button class="btn"onclick="presskey(1)">1</button>
+        <button class="btn"onclick="presskey(2)">2</button> 
+        <button class="btn"onclick="presskey(3)">3</button>
+        <button class="btn"onclick="presskey('%')">%</button>
+        <button class="btn"onclick="presskey(0)">0</button>
+        <button class="btn"onclick="presskey(00)">00</button>
+        <button class="btn"onclick="presskey('.')">.</button>
+        <button class="btn"onclick="calculate()">=</button>
+    </div>
+</div>
+<script>
+    function presskey(keyvalue)
+    {
+     const screenElement = document.getElementById("input");
+     screenElement.value =  screenElement.value +keyvalue;
+    }
+    function calculate(){
+        const screenElement = document.getElementById("input");
+        screenElement.value = eval(screenElement.value);
+    }
+    function clr() { 
+            document.getElementById("input").value = "" 
+    }
+
+    </script>
+    </body>
+</html>
